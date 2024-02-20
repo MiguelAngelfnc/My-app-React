@@ -8,7 +8,7 @@ export function App(){
           <hr />
           <HelloWorld/>
           <hr />
-          <Welcome name={"José"} age={40} />
+          <Welcome name={"Migue"} age={40} />
         </div>
     )
 }
