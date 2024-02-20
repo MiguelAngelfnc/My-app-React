@@ -2,10 +2,17 @@ import { AlertClock } from "./AlertClock";
 import { Clock } from "./Clock";
 import { Counter } from "./Counter";
 import { HelloWorld } from "./HelloWorld";
+import { InteractiveWelcome } from "./InteractiveWelcome";
+import { Login } from "./Login";
 import { MouseClicker } from "./MouseClicker";
 import { Welcome } from "./Welcome";
 
 export function App(){
+   
+  function handleLoging(data){
+    console.log("datos de inicio de sesion:", data);
+  }
+
     return(
         <div>
           <h1>My fantastic Application!</h1>
@@ -21,6 +28,10 @@ export function App(){
           <Clock/>
           <hr />
           <MouseClicker/>
+          <hr />
+          <InteractiveWelcome/>
+          <hr />
+          <Login onLoging={handleLoging}/>
           
         </div>
     )
