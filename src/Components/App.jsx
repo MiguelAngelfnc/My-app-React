@@ -1,12 +1,16 @@
 import { AlertClock } from "./AlertClock";
+import { CheckMounted } from "./CheckMounted";
 import { Clock } from "./Clock";
 import { Counter } from "./Counter";
+import { FocusAbleInput } from "./FocusAbleImput";
 import { HelloWorld } from "./HelloWorld";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { MouseClicker } from "./MouseClicker";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
+
+
 
 export function App(){
    
@@ -35,6 +39,11 @@ export function App(){
           <Login onLoging={handleLoging}/>
           <hr />
           <UncontrolledLogin/>
+          <hr />
+          <FocusAbleInput/>
+          <hr />
+          <CheckMounted/>
+          
           
         </div>
     )
