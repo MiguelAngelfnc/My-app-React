@@ -8,6 +8,7 @@ import { HelloWorld } from "./HelloWorld";
 import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { MouseClicker } from "./MouseClicker";
+import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 
@@ -52,6 +53,8 @@ export function App(){
           <CheckMounted/>
           <hr />
           <Colors colors={colors}/>
+          <hr />
+          <TodoList/>
           
           
         </div>
