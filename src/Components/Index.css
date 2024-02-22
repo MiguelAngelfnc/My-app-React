@@ -1,0 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.Welcome{
+    border: solid 10px grey;
+    background-color: azure;
+}

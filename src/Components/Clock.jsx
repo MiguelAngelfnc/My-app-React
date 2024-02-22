@@ -11,7 +11,7 @@ useEffect(()=>{
 },[])
 
 return(
-    <div>
+    <div className="Clock">
         <h2>the current time is {date.toLocaleTimeString()}</h2>
     </div>
 )

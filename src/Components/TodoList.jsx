@@ -1,4 +1,6 @@
 import { useState } from "react";
+import classes from "./TodoList.module.scss"
+
 export function TodoList(){
     const [todos,setTodos]=useState(["hola"]);
 
@@ -31,15 +33,15 @@ export function TodoList(){
             {todos.map((nombre,index)=>(
                 <li key={index}>
                     {nombre}
-                    <button onClick={()=> handleRemoveButton(index)}>remove!</button>
+                    <button className={classes.button} onClick={()=> handleRemoveButton(index)}>remove!</button>
                 </li>
             ))}
                 
 
             </ul>
             <input type="text" value={inputValue} onChange={handleInputChange}/>
-            <button onClick={handleStringButton} > pulse aqui</button>
-            <button onClick={handleResetButton} >Reset</button>
+            <button className={classes.button} onClick={handleStringButton} > pulse aqui</button>
+            <button className={classes.button} onClick={handleResetButton} >Reset</button>
         </div>
     )
 }
