@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AlertClock } from "./AlertClock";
 import { CheckMounted } from "./CheckMounted";
 import { Clock } from "./Clock";
@@ -12,52 +13,64 @@ import { MouseClicker } from "./MouseClicker";
 import { TodoList } from "./TodoList";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
+import { GithubUser } from "./GithubUser";
+import { GithubUsers } from "./GithubUsers";
 
 
 
-export function App(){
 
-  const colors=[
-    {id: 1, name:"Red"},
-    {id:2,name:"Green"},
-    {id:3,name:"Blue"}
-  ]
-   
-  function handleLoging(data){
+export function App() {
+  const colors = [
+    { id: 1, name: "Red" },
+    { id: 2, name: "Green" },
+    { id: 3, name: "Blue" },
+  ];
+
+
+
+  function handleLoging(data) {
     console.log("datos de inicio de sesion:", data);
   }
 
-    return(
+  return (
+   
+      <div>
         <Container title={<h1>My fantastic Application!</h1>}>
-          
           <hr />
-          <HelloWorld/>
+          <HelloWorld />
           <hr />
           <Welcome name={"Migue"} age={40} />
           <hr />
-          <AlertClock/>
+          <hr />
+          <GithubUser username="gianmarcotoso"/>
+          <hr />
+          <hr />
+          <GithubUsers/>
+          <hr />
+          <AlertClock />
           <p>este es mi contador</p>
-          <Counter/>
+          <Counter />
           <hr />
-          <Clock/>
+
+          <Clock />
           <hr />
-          <MouseClicker/>
+          <MouseClicker />
           <hr />
-          <InteractiveWelcome/>
+          <InteractiveWelcome />
           <hr />
-          <Login onLoging={handleLoging}/>
+          <Login onLoging={handleLoging} />
           <hr />
-          <UncontrolledLogin/>
+          <UncontrolledLogin />
           <hr />
-          <FocusAbleInput/>
+          <FocusAbleInput />
           <hr />
-          <CheckMounted/>
+          <CheckMounted />
           <hr />
-          <Colors colors={colors}/>
+          <Colors colors={colors} />
           <hr />
-          <TodoList/>
-          
-          
+          <TodoList />
         </Container>
-    )
+      </div>
+  
+  );
 }
