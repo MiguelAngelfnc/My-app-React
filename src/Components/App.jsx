@@ -2,6 +2,7 @@ import { AlertClock } from "./AlertClock";
 import { CheckMounted } from "./CheckMounted";
 import { Clock } from "./Clock";
 import { Colors } from "./Colors";
+import { Container } from "./Container";
 import { Counter } from "./Counter";
 import { FocusAbleInput } from "./FocusAbleImput";
 import { HelloWorld } from "./HelloWorld";
@@ -27,8 +28,8 @@ export function App(){
   }
 
     return(
-        <div>
-          <h1>My fantastic Application!</h1>
+        <Container title={<h1>My fantastic Application!</h1>}>
+          
           <hr />
           <HelloWorld/>
           <hr />
@@ -57,6 +58,6 @@ export function App(){
           <TodoList/>
           
           
-        </div>
+        </Container>
     )
 }
