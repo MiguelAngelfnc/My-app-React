@@ -1,45 +1,40 @@
-import { useEffect ,useRef,useState } from "react";
+import { useEffect ,useRef } from "react";
+import { useCounter } from "./useCounter";
 
 export function CounterDisplay({count}){
     return <h2> Counter: {count}</h2>;
 }
 
 export function Counter({initialValue=0}){
-    const [CounterValue,setCounterValue]= useState(initialValue)
+    const {counter, onIncrement, onDecrement,onReset}= useCounter(initialValue)
     const directionRef=useRef(null)
 
    useEffect(()=>{
-    console.log(`el valor actual es ${CounterValue} `)
+    console.log(`el valor actual es ${counter} `)
 
-    if(CounterValue>initialValue){
+    if(counter>initialValue){
       directionRef.current="up";}
-      else if(CounterValue<initialValue){
+      else if(counter<initialValue){
         directionRef.current="down"
       }
       if(directionRef.current!== null){
         console.log(`direccion de cambio${directionRef.current}`);
       }
     
-   },[CounterValue])
+   },[Counter, initialValue])
 
-  function handleCounterIncrement(){
-    setCounterValue((c)=> c + 1)
-  }
 
-  function handleCounterDecrement(){
-    setCounterValue((c)=> c - 1)
-  }
 
-  function handleCounterReset(){
-    setCounterValue(initialValue)
-  }
+
+
+
   return (
     <div>
-        <CounterDisplay count={CounterValue}/>
+        <CounterDisplay count={counter}/>
 
-        <button onClick={handleCounterIncrement}>Increment</button>
-        <button onClick={handleCounterDecrement}>Decrement</button>
-        <button onClick={handleCounterReset}>Reset</button>
+        <button onClick={onIncrement}>Increment</button>
+        <button onClick={onDecrement}>Decrement</button>
+        <button onClick={onReset}>Reset</button>
     </div>
  )
 }
