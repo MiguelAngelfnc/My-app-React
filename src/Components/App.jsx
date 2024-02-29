@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { AlertClock } from "./AlertClock";
 import { CheckMounted } from "./CheckMounted";
 import { Clock } from "./Clock";
@@ -15,11 +15,28 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 import { Welcome } from "./Welcome";
 import { GithubUser } from "./GithubUser";
 import { GithubUsers } from "./GithubUsers";
+import { LoginForm,  } from "./UseFormInput";
+import { useCurrentLocation } from "./UseCurrentLocation";
+import { useEffect } from "react";
 
 
 
 
 export function App() {
+
+  const{location, loading, error, getCurrentLocation}= useCurrentLocation();
+
+  useEffect(()=>{
+    if(location){
+      console.log("current location:" , location);
+    }
+    if(error){
+      console.log("Error getting current location", error);
+    }
+  },[location,error]
+  );
+
+
   const colors = [
     { id: 1, name: "Red" },
     { id: 2, name: "Green" },
@@ -50,6 +67,21 @@ export function App() {
           <AlertClock />
           <p>este es mi contador</p>
           <Counter />
+          <hr />
+          <LoginForm/>
+          <hr />
+          <hr />
+          <div>
+            {loading ? (
+              <p>Loading.....</p>
+            ): error ?(
+              <p>Error:{error}</p>
+            ):(
+              <p>current location:{location.latitude}, {location.longitude}</p>
+            )}
+            <button onClick={getCurrentLocation}>Get current location</button>
+          </div>
+          
           <hr />
 
           <Clock />
