@@ -9,12 +9,16 @@ import { ShowGithubUser } from "./ShowGithubUser";
 import { NotFound } from "./NotFound";
 import { GithubUserList } from "./GithubUserList";
 import { LoginFormUse } from "./LoginFormUse";
+import { AlertClock } from "./AlertClock";
 
 
 
 
 export function App() {
-
+  function HandleAlertButtonClick(){
+    const now= new Date() 
+    alert(`the current time is ${now.toLocaleTimeString()}`)
+  }
 
 
   return (
@@ -52,6 +56,7 @@ export function App() {
         <LoginFormUse/>
         <hr />
         <Welcome name={"Migue"} age={50}/>
+        <AlertClock onClick={HandleAlertButtonClick}/>
         
        
       </div>
