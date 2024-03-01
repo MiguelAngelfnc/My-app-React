@@ -50,6 +50,8 @@ export function App() {
 
         <h1>LoginFORM</h1>
         <LoginFormUse/>
+        <hr />
+        <Welcome name={"Migue"} age={50}/>
         
        
       </div>
